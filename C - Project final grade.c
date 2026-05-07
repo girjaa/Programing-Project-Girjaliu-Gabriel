@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h> 
 
-// ANSI Color Codes
+
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -60,9 +60,9 @@ void add() {
         return;
     }
 
-    getchar(); // Clear buffer
+    getchar(); 
 
-    // VALIDATION: Explicit labels and formats
+
     printf("Input " BOLD "Card Number" RESET " (XXXX-XXXX-XXXX-XXXX): ");
     fgets(card[i].card_number, sizeof(card[i].card_number), stdin);
     card[i].card_number[strcspn(card[i].card_number, "\n")] = 0;
@@ -91,7 +91,6 @@ void display() {
     }
 
     for(int j = 0; j < i; j++) {
-        // COLORS: Only coloring specific elements
         printf("%d. " BLUE "%s" RESET " [" YELLOW "%d" RESET " views]\n", 
                j + 1, card[j].cardholder_name, card[j].card_views);
     }
